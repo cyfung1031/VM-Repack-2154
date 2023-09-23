@@ -34,6 +34,10 @@ vm-repack-2154 --file [path-to-zip-file] [options]
 ### Example
 
 ```sh
+vm-repack-2154 --f /downloads/folder/Violentmonkey-beta-webext-v2.15.4.zip
+```
+
+```sh
 vm-repack-2154 --file /downloads/folder/Violentmonkey-beta-webext-v2.15.4.zip --suffix _modified
 ```
 

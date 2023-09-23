@@ -79,7 +79,14 @@ async function run() {
 
             let content = await textFile.async('string');
             content = editContent(content);
+            
+            // https://github.com/Stuk/jszip/issues/369
+            const _defaultDate = JSZip.defaults.date;
+            const currDate = new Date();
+            const dateWithOffset = new Date(currDate.getTime() - currDate.getTimezoneOffset() * 60000);
+            JSZip.defaults.date = dateWithOffset;
             zip.file(argv.textFile, content); // Replace with the edited content
+            JSZip.defaults.date = _defaultDate;
 
             // Write the modified Zip file back to disk
             const outputBuffer = await zip.generateAsync({ type: 'nodebuffer' });

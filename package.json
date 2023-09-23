@@ -1,6 +1,6 @@
 {
   "name": "vm-repack-2154",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI tool to edit script files inside a zip file.",
   "main": "index.js",
   "scripts": {

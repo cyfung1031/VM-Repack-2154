@@ -13,6 +13,6 @@
     "jszip": "^3.7.1",
     "yargs": "^17.3.0"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "CY Fung",
+  "license": "MIT"
 }

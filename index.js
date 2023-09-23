@@ -57,9 +57,32 @@ async function run() {
             process.exit(1);
         }
 
-        const outputPath = getOutputPath();
+        const stat = await fs.stat(inputFile);
 
-        if (ext === '.zip') {
+        if (stat.isDirectory()) {
+            const folderTextFilePath = path.join(inputFile, argv.textFile);
+
+            try {
+                await fs.access(folderTextFilePath);
+            } catch {
+                console.error(`Error: Text File ${argv.textFile} does not exist in the folder ${inputFile}.`);
+                process.exit(1);
+            }
+
+            const ext = path.extname(folderTextFilePath).toLowerCase();
+
+            if (ext === '.js') {
+                let content = await fs.readFile(folderTextFilePath, 'utf-8');
+                content = editContent(content);
+                await fs.writeFile(folderTextFilePath, content, 'utf-8');
+                console.log(`Modified js file saved to ${folderTextFilePath}`);
+            } else {
+                console.error('Error: The input file should be a js file inside the directory.');
+                process.exit(1);
+            }
+
+        } else if (ext === '.zip') {
+            const outputPath = getOutputPath();
 
             // Read the Zip file
             const zipBuffer = await fs.readFile(inputFile);
@@ -95,6 +118,8 @@ async function run() {
 
             console.log(`Modified zip file saved to ${outputPath}`);
         } else if (ext === '.js') {
+            const outputPath = getOutputPath();
+            
             let content = await fs.readFile(inputFile, 'utf-8');
             content = editContent(content);
             await fs.writeFile(outputPath, content, 'utf-8');

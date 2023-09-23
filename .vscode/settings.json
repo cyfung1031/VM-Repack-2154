@@ -1,0 +1,16 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "javascript.validate.enable": true,
+  "javascript.suggestionActions.enabled": false
+}

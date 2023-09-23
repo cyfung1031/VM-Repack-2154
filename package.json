@@ -1,0 +1,18 @@
+{
+  "name": "vm-repack-2154",
+  "version": "1.0.0",
+  "description": "A CLI tool to edit script files inside a zip file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "vm-repack-2154": "./index.js"
+  },
+  "dependencies": {
+    "jszip": "^3.7.1",
+    "yargs": "^17.3.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

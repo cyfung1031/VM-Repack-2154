@@ -53,6 +53,7 @@ To uninstall VM-Repack-2154, navigate to the project's root directory and run:
 
 ```sh
 npm unlink vm-repack-2154
+npm uninstall -g vm-repack-2154
 ```
 
 This will remove the global link to the package. After doing this, you can also delete the project folder if you no longer need it.

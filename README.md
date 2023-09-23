@@ -1,9 +1,29 @@
-### README.md
-
-```markdown
 # VM-Repack-2154
 
 VM-Repack-2154 is a simple command-line utility to edit a specific text file inside a zip file, make specified replacements, and repack it.
+
+## Direct Use (npx)
+
+### GitHub Clone
+
+```sh
+npx github:cyfung1031/vm-repack-2154 -f Violentmonkey-beta-webext-v2.15.4.zip
+```
+
+```sh
+npx github:cyfung1031/vm-repack-2154 -f /downloads/folder/Violentmonkey-beta-webext-v2.15.4.zip
+```
+
+
+### Local Folder
+
+```sh
+npx vm-repack-2154 -f Violentmonkey-beta-webext-v2.15.4.zip
+```
+
+```sh
+npx vm-repack-2154 -f /downloads/folder/Violentmonkey-beta-webext-v2.15.4.zip
+```
 
 ## Installation
 
